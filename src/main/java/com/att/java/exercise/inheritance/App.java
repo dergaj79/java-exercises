@@ -14,21 +14,26 @@ public class App {
 	   2. Create Circle Class that extends Shape and implements:
  		  calcArea(), calcPerimeter()
 	 */
-	
-	
-	public static void main(String[] args) {
-		//Test your solution:
-		//Create a shape and print it
-		
-		// Does, the following statement compiles? If not, why?
-		// Do u recommend it?
-		//Shape circle  = new Circle();
-		
-		//Create a Blue circle with radius=5
-		//...
-		
-		//Print Circle's area, perimeter and color
-		//...
-		
-	}
+
+    public static void main(String[] args) {
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
+    }
+
+//
+//	public static void main(String[] args) {
+//		//Test your solution:
+//		//Create a shape and print it
+//
+//		// Does, the following statement compiles? If not, why?
+//		// Do u recommend it?
+//		//Shape circle  = new Circle();
+//
+//		//Create a Blue circle with radius=5
+//		//...
+//
+//		//Print Circle's area, perimeter and color
+//		//...
+//		System.out.println("Avi Dasta Test app runnning !");
+//
+//	}
 }
