@@ -2,7 +2,6 @@ package com.att.java.exercise.interfaces;
 
 public class KeyLockingDoor implements Door {
 	private static final Key KEY = new Key("7654");
-			
 	private boolean open = false;
 	private boolean locked = true;
 	

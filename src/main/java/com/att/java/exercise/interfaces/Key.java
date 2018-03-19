@@ -7,6 +7,8 @@ public class Key {
 		this.key = k;
 	}
 	
-	public String getKey() { return key; }
+	public String getKey() {
+		return key;
+	}
 
 }

@@ -2,7 +2,6 @@ package com.att.java.solution.interfaces;
 
 public class KeyLockingDoor implements Door {
 	private static final Key KEY = new Key("7654");
-			
 	private boolean open = false;
 	private boolean locked = true;
 	
@@ -14,12 +13,10 @@ public class KeyLockingDoor implements Door {
 	@Override
 	public boolean open() {
 		boolean result = false;
-		
 		//Manage to open only if door is unlocked
 		if (!locked) {
 			result = true;
 		}
-		
 		return result;
 	}
 
