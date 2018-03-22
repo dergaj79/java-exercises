@@ -9,10 +9,12 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import com.att.java.solution.collections.Student;
-import com.att.java.solution.collections.StudentsStore;
-import com.att.java.solution.collections.StudentsStoreAsList;
-import com.att.java.solution.collections.StudentsStoreAsMap;
+import com.att.java.exercise.collections.Student;
+import com.att.java.exercise.collections.StudentsStore;
+//import com.att.java.exercise.collections.StudentsStoreAsList;
+import com.att.java.exercise.collections.StudentsStoreAsMap;
+//import com.att.java.solution.collections.StudentsStoreAsList;
+//import com.att.java.solution.collections.StudentsStoreAsMap;
 
 @RunWith(value = Parameterized.class)
 public class StudentStoreTest {
@@ -27,7 +29,7 @@ public class StudentStoreTest {
     @Parameters(name = "{index}: type {0}")
     public static Object[] data() {
         return new Object[]{
-        		new StudentsStoreAsList(),
+//        		new StudentsStoreAsList(),
         		new StudentsStoreAsMap()
         };
     }
@@ -52,12 +54,6 @@ public class StudentStoreTest {
 		Assert.assertFalse(success);
 		Assert.assertTrue(countBefore == countAfter);
 		
-	}
-	
-	@Test
-	public void testThatNewStoreIsCreatedWithZeroElements() {
-		prepareStudentStore(store, true);
-		Assert.assertTrue(store.getAllStudents().size() == 0);
 	}
 
 	@Test

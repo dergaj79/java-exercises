@@ -8,7 +8,7 @@ public class Key {
 	}
 	
 	public String getKey() {
-		return key;
-	}
+		return key; 
+		}
 
 }

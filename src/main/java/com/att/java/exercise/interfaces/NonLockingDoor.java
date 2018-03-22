@@ -3,12 +3,18 @@ package com.att.java.exercise.interfaces;
 public class NonLockingDoor implements Door {
 	
 	private boolean open = false;
+	private boolean isClosed = false;
 	
 	@Override
 	public boolean isOpen() {
 		return this.open;
 	}
-
+	
+	@Override
+	public boolean isClose() {		
+		return isClosed;
+	}
+	
 	@Override
 	public boolean open() {
 		this.open = true;
@@ -35,5 +41,6 @@ public class NonLockingDoor implements Door {
 	public boolean isLocked() {
 		return false;
 	}
-	
+
+
 }

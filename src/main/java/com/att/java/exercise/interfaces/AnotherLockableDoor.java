@@ -1,6 +1,7 @@
 package com.att.java.exercise.interfaces;
 
-public class KeyLockingDoor implements Door {
+public class AnotherLockableDoor implements Closeable, Lockable {
+
 	private static final Key KEY = new Key("secret");
 
 	private boolean isOpened = false;
@@ -11,8 +12,6 @@ public class KeyLockingDoor implements Door {
 	public boolean isOpen() {
 		return isOpened;
 	}
-	
-	@Override
 	public boolean isClose() {		
 		return isClosed;
 	}
@@ -72,6 +71,5 @@ public class KeyLockingDoor implements Door {
 	private boolean isValid(Key key) {
 		return key.getKey().equals(KEY.getKey());
 	}
-
-
+	
 }

@@ -1,43 +1,46 @@
 package com.att.java.solution.interfaces;
 
+import com.att.java.exercise.interfaces.Door;
+import com.att.java.exercise.interfaces.Key;
+
 public class KeyLockingDoor implements Door {
-	private static final Key KEY = new Key("7654");
-	private boolean open = false;
-	private boolean locked = true;
+	private static final Key KEY = new Key("secret");
+			
+	private boolean isOpened = false;
+	private boolean islocked = true;
 	
 	@Override
 	public boolean isOpen() {
-		return open;
+		return isOpened;
 	}
 
 	@Override
 	public boolean open() {
-		boolean result = false;
 		//Manage to open only if door is unlocked
-		if (!locked) {
-			result = true;
+		if (!islocked) {
+			isOpened = true;
 		}
-		return result;
+		return isOpened;
 	}
 
 	@Override
 	public boolean close() {
-		boolean result = false;
-		
-		//Shall return true only 
-		if (open && !locked) {
-			open = false;
-			result = true;
-		}
-		return result;
+		isOpened = false;
+		return true;
 	}
 
 	@Override
 	public boolean lock(Key key) {
+		if (isOpened) {
+			System.out.println("Must close door first!");
+			return false;
+		}
+		
 		if (isValid(key)) {
-			this.locked = true;
+			islocked = true;
 			return true;
-		} else {
+		} 
+		else {
 			System.out.println("Must provide a valid key!");
 			return false;
 		}
@@ -45,22 +48,33 @@ public class KeyLockingDoor implements Door {
 
 	@Override
 	public boolean unlock(Key key) {
+		if (isOpened || !islocked) {
+			return true;			
+		}
+		
 		if (isValid(key)) {
-			this.locked = false;
+			islocked = false;
 			return true;
-		} else {
+		} 
+		else {
 			System.out.println("Must provide a valid key!");
 			return false;
 		}
 	}
 
+	@Override
+	public boolean isLocked() {
+		return islocked;
+	}
+
+	
 	private boolean isValid(Key key) {
 		return key.getKey().equals(KEY.getKey());
 	}
 
 	@Override
-	public boolean isLocked() {
-		return locked;
+	public boolean isClose() {
+		// TODO Auto-generated method stub
+		return false;
 	}
-
 }
